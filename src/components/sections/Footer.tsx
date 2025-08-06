@@ -1,5 +1,4 @@
 import React from "react";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import ScrollReveal from "@/components/visuals/ScrollReveal";
 
 const Footer: React.FC = () => {
@@ -11,7 +10,6 @@ const Footer: React.FC = () => {
             <p className="text-sm text-foreground/80 font-medium">© Tanmay Patil</p>
             <p className="text-xs text-foreground/60">Cryptography Showcase • Built for immersive learning.</p>
           </div>
-          <MadeWithDyad />
         </div>
       </ScrollReveal>
     </footer>
