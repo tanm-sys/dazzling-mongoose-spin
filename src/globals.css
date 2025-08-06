@@ -75,11 +75,11 @@
 }
 
 @layer utilities {
-  /* Refined Google-like motion */
+  /* Google-like fluent motion */
   @keyframes fade-in-up {
     from {
       opacity: 0;
-      transform: translateY(16px) scale(0.985);
+      transform: translateY(14px) scale(0.985);
       filter: saturate(0.9);
     }
     to {
@@ -87,6 +87,11 @@
       transform: translateY(0) scale(1);
       filter: saturate(1);
     }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0 }
+    to { opacity: 1 }
   }
 
   @keyframes shimmer {
@@ -98,16 +103,29 @@
     animation: fade-in-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
   }
 
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
   .animate-shimmer {
     background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
     background-size: 200% 100%;
     animation: shimmer 1.8s infinite;
   }
 
+  /* Glass and elevation */
   .glass {
     @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg;
   }
 
+  .elevate {
+    box-shadow:
+      0 1px 1px rgba(0,0,0,0.04),
+      0 2px 6px rgba(0,0,0,0.06),
+      0 12px 24px rgba(0,0,0,0.06);
+  }
+
+  /* Micro interactions */
   .smooth-hover {
     transition: transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1),
                 box-shadow 280ms cubic-bezier(0.2, 0.7, 0.2, 1),
@@ -117,5 +135,12 @@
 
   .smooth-hover:hover {
     transform: translateY(-2px) scale(1.01);
+  }
+
+  .pressable {
+    transition: transform 160ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .pressable:active {
+    transform: scale(0.98);
   }
 }

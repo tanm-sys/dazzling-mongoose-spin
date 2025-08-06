@@ -5,21 +5,9 @@ import TiltCard from "@/components/visuals/TiltCard";
 import ScrollReveal from "@/components/visuals/ScrollReveal";
 
 const items = [
-  {
-    icon: KeyRound,
-    title: "Confidentiality",
-    desc: "Keep messages hidden using ciphers and keys.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Integrity",
-    desc: "Detect tampering with hashes and message authentication.",
-  },
-  {
-    icon: Share2,
-    title: "Authenticity",
-    desc: "Verify identities with signatures and public-key crypto.",
-  },
+  { icon: KeyRound, title: "Confidentiality", desc: "Keep messages hidden using ciphers and keys." },
+  { icon: ShieldCheck, title: "Integrity", desc: "Detect tampering with hashes and message authentication." },
+  { icon: Share2, title: "Authenticity", desc: "Verify identities with signatures and public-key crypto." },
 ];
 
 const Overview: React.FC = () => {
@@ -43,7 +31,7 @@ const Overview: React.FC = () => {
           return (
             <ScrollReveal key={it.title} delay={i * 100}>
               <TiltCard className="h-full">
-                <Card className="h-full">
+                <Card className="h-full elevate smooth-hover">
                   <CardHeader>
                     <div className="mb-2 inline-flex rounded-md bg-primary/10 p-2 text-primary">
                       <Icon className="h-5 w-5" />

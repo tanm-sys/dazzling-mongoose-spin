@@ -5,24 +5,9 @@ import TiltCard from "@/components/visuals/TiltCard";
 import ScrollReveal from "@/components/visuals/ScrollReveal";
 
 const algos = [
-  {
-    icon: LockKeyhole,
-    title: "RSA",
-    desc: "Public-key encryption built from primes, modular exponentiation, and Euler’s totient.",
-    tags: ["Primes", "ModPow", "φ(n)"],
-  },
-  {
-    icon: Handshake,
-    title: "Diffie–Hellman",
-    desc: "Key exchange over insecure channels, leveraging discrete logarithm hardness.",
-    tags: ["Discrete Log", "Groups", "g^ab"],
-  },
-  {
-    icon: Hash,
-    title: "Hash Functions",
-    desc: "One-way compression: integrity, commitments, and proof-of-work foundations.",
-    tags: ["SHA-2", "SHA-3", "Collision Resistance"],
-  },
+  { icon: LockKeyhole, title: "RSA", desc: "Public-key encryption built from primes, modular exponentiation, and Euler’s totient.", tags: ["Primes", "ModPow", "φ(n)"] },
+  { icon: Handshake, title: "Diffie–Hellman", desc: "Key exchange over insecure channels, leveraging discrete logarithm hardness.", tags: ["Discrete Log", "Groups", "g^ab"] },
+  { icon: Hash, title: "Hash Functions", desc: "One-way compression: integrity, commitments, and proof-of-work foundations.", tags: ["SHA-2", "SHA-3", "Collision Resistance"] },
 ];
 
 const Algorithms: React.FC = () => {
@@ -44,8 +29,8 @@ const Algorithms: React.FC = () => {
           const Icon = a.icon;
           return (
             <ScrollReveal key={a.title} delay={i * 100}>
-              <TiltCard className="relative hover:shadow-lg">
-                <Card className="relative overflow-hidden">
+              <TiltCard className="relative">
+                <Card className="relative overflow-hidden elevate smooth-hover">
                   <div className="absolute inset-0 animate-shimmer" />
                   <CardHeader>
                     <div className="mb-2 inline-flex rounded-md bg-primary/10 p-2 text-primary">

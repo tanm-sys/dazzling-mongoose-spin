@@ -2,7 +2,6 @@ import React from "react";
 import { Shield, Sigma, Lock } from "lucide-react";
 import AnimatedBackground from "@/components/visuals/AnimatedBackground";
 import { Button } from "@/components/ui/button";
-import { ParallaxLayer } from "@/components/visuals/Parallax";
 import ScrollReveal from "@/components/visuals/ScrollReveal";
 
 const Hero: React.FC = () => {
@@ -36,7 +35,7 @@ const Hero: React.FC = () => {
             <Button
               asChild
               size="lg"
-              className="group relative overflow-hidden rounded-full px-6 py-3 text-base font-medium shadow-lg transition-transform hover:scale-105"
+              className="group relative overflow-hidden rounded-full px-6 py-3 text-base font-medium elevate smooth-hover pressable"
             >
               <a href="#math-preview">
                 <span className="absolute inset-0 animate-shimmer" />
@@ -48,7 +47,7 @@ const Hero: React.FC = () => {
               asChild
               size="lg"
               variant="secondary"
-              className="group rounded-full px-6 py-3 text-base font-medium transition-transform hover:scale-105"
+              className="group rounded-full px-6 py-3 text-base font-medium elevate smooth-hover pressable"
             >
               <a href="#algorithms">
                 <Lock className="mr-2 h-5 w-5" />
