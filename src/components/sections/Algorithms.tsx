@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LockKeyhole, Handshake, Hash } from "lucide-react";
+import TiltCard from "@/components/visuals/TiltCard";
 
 const algos = [
   {
@@ -39,31 +40,33 @@ const Algorithms: React.FC = () => {
         {algos.map((a, i) => {
           const Icon = a.icon;
           return (
-            <Card
+            <TiltCard
               key={a.title}
               className="relative translate-y-3 opacity-0 [animation-delay:calc(var(--i)*80ms)] animate-[fade-in-up_0.7s_ease_forwards] hover:shadow-lg"
               style={{ ["--i" as any]: i }}
             >
-              <CardHeader>
-                <div className="mb-2 inline-flex rounded-md bg-primary/10 p-2 text-primary">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <CardTitle>{a.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-foreground/70">{a.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {a.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-foreground/70 backdrop-blur"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              <Card>
+                <CardHeader>
+                  <div className="mb-2 inline-flex rounded-md bg-primary/10 p-2 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <CardTitle>{a.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-4 text-foreground/70">{a.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {a.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs text-foreground/70 backdrop-blur"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </TiltCard>
           );
         })}
       </div>

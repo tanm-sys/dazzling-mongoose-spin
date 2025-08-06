@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { KeyRound, ShieldCheck, Share2 } from "lucide-react";
+import TiltCard from "@/components/visuals/TiltCard";
 
 const items = [
   {
@@ -37,19 +38,21 @@ const Overview: React.FC = () => {
         {items.map((it, i) => {
           const Icon = it.icon;
           return (
-            <Card
+            <TiltCard
               key={it.title}
               className="group relative translate-y-2 opacity-0 [animation-delay:calc(var(--i)*60ms)] animate-[fade-in-up_0.7s_ease_forwards]"
               style={{ ["--i" as any]: i }}
             >
-              <CardHeader>
-                <div className="mb-2 inline-flex rounded-md bg-primary/10 p-2 text-primary">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <CardTitle>{it.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-foreground/70">{it.desc}</CardContent>
-            </Card>
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="mb-2 inline-flex rounded-md bg-primary/10 p-2 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <CardTitle>{it.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-foreground/70">{it.desc}</CardContent>
+              </Card>
+            </TiltCard>
           );
         })}
       </div>
